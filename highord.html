@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>higher order</title>
+</head>
+
+<body>
+    <i></i>
+    <hr>
+    <h1>higher order</h1>
+    <p id="p"></p>
+
+</body>
+<script>
+
+
+
+    let num = [12, 32, 44, 65, 77, 1, 333]
+    num.filter(function (a) {
+        return a > 50;
+    })
+    console.log(num)
+
+
+    let fruits = ["banana", "apple", "pineapple"]
+    fruits.forEach(function (value, index) {
+        return index + value;
+    })
+
+    document.getElementById("p").innerHTML = fruits;
+    let ages = [12, 32, 44, 65, 77, 1, 333]
+    let adult = ages.filter(function (val) {
+        return val > 60;
+    })
+    console.log(adult)
+    let company = [{ start: 1990, end: 2000 },
+    { start: 1995, end: 2005 },
+    { start: 1999, end: 2010 },
+    { start: 1985, end: 1990 },
+    { start: 2000, end: 2040 }];
+    //let companymanage = company.filter(comp => (comp.end - comp.start >= 20))
+    let companymanage = company.filter(function(comp){
+      return  comp.end - comp.start >= 20;
+    })
+    console.log(companymanage)
+
+</script>
+
+</html>

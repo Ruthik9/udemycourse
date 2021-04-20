@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview </title>
+</head>
+
+<body>
+    <p id="pp"></p>
+    <p id="text"></p>
+    <button id="btn">click</button>
+</body>
+<script>
+    class students {
+        constructor(name, rollno, age) {
+            this.sname = name;
+            this.sno = rollno;
+            this.sage = age;
+        }
+        info() {
+            // document.getElementById("pp").innerHTML=this.sage+" "+this.sno+" "+this.sname;
+            //  console.log(this.sage+" "+this.sno+" "+this.sname)
+        }
+    }
+    class newstud extends students {
+        constructor(name, rollno, age, skills) {
+            super(name, rollno, age)
+            this.nskills = skills;
+        }
+        newinfo() {
+            document.getElementById("pp").innerHTML = this.sage + " " + this.sno + " " + this.sname + " " + this.nskills;
+        }
+    }
+    //let stud1=new students(12,22,"ritik");
+    //stud1.info()
+    let nstud = new newstud(22, 33, "xxx", 'football')
+    nstud.newinfo()
+    document.getElementById("btn").addEventListener("click",press);
+    function press(){
+        alert("success");
+    }
+    let obj={name:"ritik",
+color:"brown",
+sex:"male",
+  info : function(){
+return this.name+" "+this.color+" "+this.sex
+}
+}
+console.log(obj.info())
+for(let i=2;i<=20;i++){
+console.log(i)
+}
+function star (sname,sage,ssex){
+this.stname=sname;
+this.stage=sage;
+this.sx=ssex
+this.in=function (){
+  document.getElementById("text").innerHTML=  this.stname+this.stage+this.sx;
+}
+}
+let actor=new star("varun","male",28);
+
+</script>
+
+</html>
